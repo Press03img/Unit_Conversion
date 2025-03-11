@@ -1,5 +1,4 @@
 import streamlit as st
-import pyperclip
 from pint import UnitRegistry
 
 # 単位換算用のライブラリ
@@ -38,8 +37,8 @@ if st.button("換算"):
         result_text = f"{value} {from_unit} = {result:.4f} {to_unit}"
         st.success(result_text)
 
-        # クリップボードにコピー
-        pyperclip.copy(result_text)
-        st.info("結果がクリップボードにコピーされました！")
+        # クリップボードにコピーできるテキストボックス
+        st.text_input("結果をコピー", result_text)
+
     except Exception as e:
         st.error(f"換算エラー: {e}")
