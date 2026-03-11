@@ -1,2 +1,3 @@
-pyperclip
-pint
+streamlit
+pandas
+numpy
